@@ -58,7 +58,8 @@ num3 = len(input("Ingrese el numero 3: "))
 print("\n6)\nLargo numero 1:\t", num1
       ,"\nLargo numero 2:\t", num2
       ,"\nLargo numero 3:\t", num3
-      ,"\nTotal:\t", num1 + num2 + num3)
+      ,"\nTotal:\t", num1 + num2 + num3
+      ,"\nMedia:\t", (num1 + num2 + num3)/3)
 print("\n")
 
 #7
@@ -127,9 +128,10 @@ print("a: ",a,
 print("\n")
 
 #15
-segundos = float(input("15)\nIngrese la cantidad de segundos de A a B: "))
-tiempo = timedelta(seconds = segundos)
-print("De la ciudad A a la ciudad B demoro:\t", tiempo)
+tiempo_partida = [input("Hora de partida: "), input("Minutos de partida: "), input("Segundos de partida: ")]
+segundos = int(input("\nIngrese la cantidad de segundos de A a B: "))
+tiempo_llegada = [((segundos/60)/60),(segundos/60),(segundos%60)] 
+print("De la ciudad A a la ciudad B demoro:\t", tiempo_llegada)
 print("\n")
 
 #16
