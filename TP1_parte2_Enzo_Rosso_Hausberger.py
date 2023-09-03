@@ -127,13 +127,31 @@ print("a: ",a,
       "\nb: ", b)
 print("\n")
 
-#15
-tiempo_partida = [input("Hora de partida: "), input("Minutos de partida: "), input("Segundos de partida: ")]
-segundos = int(input("\nIngrese la cantidad de segundos de A a B: "))
-tiempo_llegada = [((segundos/60)/60),(segundos/60),(segundos%60)] 
-print("De la ciudad A a la ciudad B demoro:\t", tiempo_llegada)
-print("\n")
+'''#15
+tiempo_partida = [
+    int(input("Hora de partida: ")),
+    int(input("Minutos de partida: ")), 
+    int(input("Segundos de partida: "))]
 
+cantidad_segundos = int(input("\nIngrese la cantidad de segundos de A a B: "))
+
+hora = int(tiempo_partida[0] + (cantidad_segundos/60)/60)
+minutos = int(tiempo_partida[1] + (cantidad_segundos/60)%60)
+segundos = int(tiempo_partida[2] +(cantidad_segundos%60))
+
+if segundos >= 60:
+    segundos -= 60
+    minutos += 1
+
+if minutos >= 60:
+    minutos -= 60
+    hora += 1
+
+if hora >= 24:
+    hora -= 24
+
+print(f"Hora de llegada a la ciudad B: {hora}:{minutos}:{segundos}")
+'''
 #16
 nombre = input("16)\nIngrese su nombre: ")[0].capitalize
 apellido = input("Ingrese su apellido ")[0].capitalize
