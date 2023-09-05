@@ -150,7 +150,7 @@ Returns: -.
 '''
 def validar(dia, num_dia, mes, clase, dic_semanal, dic_mensual):
   
-  if(validar_dia(dia, dic_semanal) and validar_numero_dia(num_dia) and validar_numero_mes(mes, num_dia, dic_mensual) 
+  if(validar_dia(dia, dic_semanal) and validar_numero_dia(int(num_dia)) and validar_numero_mes(int(mes), int(num_dia), dic_mensual) 
     and validar_clase(clase, dic_semanal) and validar_dia_clase(dia, clase, dic_semanal)):
     
     '''Se muestra la fecha respetando el formato'''
@@ -188,12 +188,10 @@ Primero se solicita al usuario que ingrese por teclado el día, el número del d
 Dado que los dos últimos datos tienen que ser numéricos son convertidos a enteros. También se eliminan los espacios ingresados por el usuario'''
 
 nombre_dia = input("Ingrese el día de la semana ").lower().strip()
-fecha_dia = int(input("Ingrese el número del día: ").strip())
-fecha_mes = int(input("Ingrese el número del mes: ").strip())
+fechas = input("Ingrese la fecha en formato DD/MM: ")
 nombre_clase = input("Ingrese el nombre de la clase o nivel: ").strip()
 
 '''Luego se ingresan todas las variables como parámetros a la función validar'''
-validar(nombre_dia, fecha_dia, fecha_mes, nombre_clase, cronograma_semanal, meses_del_anio)
-
+validar(nombre_dia, fechas[0:2], fechas[3:5], nombre_clase, cronograma_semanal, meses_del_anio)
 '''Anuncia el final de la ejecución'''
 print("Fin del programa")
