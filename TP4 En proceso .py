@@ -15,9 +15,13 @@ while  30 >= x:
 '''#2
 frase = " "
 
-while frase != "":
-    frase = input("Please enter a frase:\t").upper().replace(" ", "")
-    print(frase)'''
+while True:
+    frase = input("Please enter a frase:\t").upper().strip()
+    if frase:
+        print(frase)
+    else:
+        break'''
+
 
 '''#3
 menu = 1
@@ -63,11 +67,10 @@ def banking_transactions(bank_log):
     else:
         print("\t\t---NO BANKING TRANSACTIONS---")
 
-
-while menu != 0:
+while menu != 350:
     print("\n<-----Bank Name----->")
-    menu = int(input("---Menu---\n1)\tDeposit\n2)\tWithdrawal\n3)\tAccount balance\n4)\tBanking transactions\n0)\tExit\n"))
-    if menu in [0, 1, 2, 3, 4]:
+    menu = int(input("---Menu---\n1)\tDeposit\n2)\tWithdrawal\n3)\tAccount balance\n4)\tBanking transactions\n350)\tExit\n"))
+    if menu in [350, 1, 2, 3, 4]:
         if menu == 1:
             while deposit() == False:
                 deposit()
@@ -84,5 +87,80 @@ while menu != 0:
     else:
         print("\t\tInvalid command, please try again")
 
-print("Good bye, thank you for trusting us.")'''
+print("Good bye, thank you for trusting us.")
+'''
 
+'''#4
+num = 1
+primes = 0
+def is_prime(number):
+    if number <= 1:
+        return False
+    
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            return False
+      
+        return True
+
+while num != 0:
+    num = float(input("Enter a number bigger than 1, 0 to exit: "))
+    if num < 1:
+        print("The number should be bigger than 1")
+    else:
+        if is_prime(num):
+            primes += 1
+        
+print(f"You enter {primes} prime number/s")'''
+
+'''#5
+first_year, second_year = int(input("Enter a year: ")), int(input("Enter another year: "))
+
+for y in range(min(first_year, second_year), max(first_year, second_year), 1):
+    if ((y % 4 == 0 and y % 100 != 0) or y % 400 == 0) and (y % 10 == 0):
+        print(y)
+'''
+
+'''#6
+for n in range(1, 21):
+    if n % 2 != 0:
+        continue
+    else:
+        print(n)'''
+
+'''#7
+import random
+numbers = []
+
+while len(numbers) <= 10:
+    numbers.append(random.randint(1, 10))
+
+
+print(numbers)
+number = int(input("Search a number: "))
+
+for n in numbers:
+    if n == number:
+        print("Found")
+        break
+else:
+    print("Not found")'''
+
+#8
+menu = 1
+while True:
+    menu = int(input("---Menu---\nSelect:\n1)\n2)\n3)\t0)Exit\n"))
+    if menu in [0, 1, 2, 3]:
+        if menu == 1:
+            print("Number 1")
+        if menu == 2:
+            print("Number 2")
+        if menu == 3:
+           print("Number 3")
+        if menu == 0:
+            print("Good bye")
+            break
+    else:
+        print("\t\tInvalid command, please try again")
+
+print("Good bye, thank you for trusting us.")
