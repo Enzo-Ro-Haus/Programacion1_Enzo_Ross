@@ -67,28 +67,24 @@ def banking_transactions(bank_log):
     else:
         print("\t\t---NO BANKING TRANSACTIONS---")
 
-while menu != 350:
+while menu != "":
     print("\n<-----Bank Name----->")
-    menu = int(input("---Menu---\n1)\tDeposit\n2)\tWithdrawal\n3)\tAccount balance\n4)\tBanking transactions\n350)\tExit\n"))
-    if menu in [350, 1, 2, 3, 4]:
-        if menu == 1:
-            while deposit() == False:
-                deposit()
-
-        if menu == 2:
-            while withdrawal() == False:
-                withdrawal()
-
-        if menu == 3:
-            print(f"\t\tAccount balance: ${bank_account}")
-    
-        if menu == 4:
-            banking_transactions(bank_op_log)
-    else:
+    menu = str(input("---Menu---\n1)\tDeposit\n2)\tWithdrawal\n3)\tBanking transactions\n\tExit\n"))
+        
+    if menu == "1":
+        while deposit() == False:
+            deposit()
+    elif menu == "2":
+        while withdrawal() == False:
+            withdrawal()
+    elif menu == "3":
+        banking_transactions(bank_op_log)
+    elif menu != "":
         print("\t\tInvalid command, please try again")
 
-print("Good bye, thank you for trusting us.")
-'''
+print(f"\t\tAccount balance: ${bank_account}")
+print("Good bye, thank you for trusting us.")'''
+
 
 '''#4
 num = 1
@@ -100,7 +96,7 @@ def is_prime(number):
     for i in range(2, int(number**0.5) + 1):
         if number % i == 0:
             return False
-      
+
         return True
 
 while num != 0:
@@ -146,7 +142,7 @@ for n in numbers:
 else:
     print("Not found")'''
 
-#8
+'''#8
 menu = 1
 while True:
     menu = int(input("---Menu---\nSelect:\n1)\n2)\n3)\t0)Exit\n"))
@@ -163,4 +159,4 @@ while True:
     else:
         print("\t\tInvalid command, please try again")
 
-print("Good bye, thank you for trusting us.")
+print("Good bye, thank you for trusting us.")'''
